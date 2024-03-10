@@ -19,7 +19,7 @@ public class ListadoController {
     @RequestMapping("/")
     public String listarVideojuegos(Model model) {
         List<Videojuego> destacados = videojuegoService.buscarDestacados();
-        model.addAttribute("videojuegos",destacados);
+        model.addAttribute("videojuegos", destacados);
         return "listado";
     }
 }

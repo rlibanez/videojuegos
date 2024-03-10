@@ -25,76 +25,13 @@
 
     <div class="container mt-4 vj-destacados">
         <div class="row">
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="https://static.posters.cz/image/1300/posters/borderlands-3-cover-i76366.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Borderlands 3</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                            the card's content.</p>
-                    </div>
-                    <div class="card-footer text-muted">
-                        <a href="#" class="btn btn-primary">Ver detalles</a>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-md-3 mb-4">
+            <div th:each="juego : ${videojuegos}" class="col-md-3 mb-4">
                 <div class="card">
-                    <img src="https://media.playstation.com/is/image/SCEA/control-poster-01-ps4-us-11sep19?$native_nt$"
-                        class="card-img-top" alt="...">
+                    <img th:src="${juego.imagenUrl}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Control</h5>
-                        <p class="card-text">Una presencia corrupta ha invadido la Agencia Federal de Control... Solo tú
-                            puedes detenerla, deberás luchar para recuperar Control.</p>
-                    </div>
-                    <div class="card-footer text-muted">
-                        <a href="#" class="btn btn-primary">Ver detalles</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="https://store.playstation.com/store/api/chihiro/00_09_000/container/ES/es/999/EP5426-CUSA13893_00-2222444466669999/1568624921000/image"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Subnautica</h5>
-                        <p class="card-text">Un juego de aventuras, supervivencia desarrollado y publicado por Unknown
-                            Worlds Entertainment. Permite al jugador explorar libremente un planeta oceánico alienígena.
-                        </p>
-                    </div>
-                    <div class="card-footer text-muted">
-                        <a href="#" class="btn btn-primary">Ver detalles</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="https://image.api.playstation.com/cdn/EP0144/CUSA04118_00/ggQdzcbimtqao8aHOHFowA8MPW9c6m9k.png"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Firewatch</h5>
-                        <p class="card-text">Firewatch es un videojuego de aventura y misterio en primera persona
-                            desarrollado por Campo Santo y producido por Campo Santo y Panic. Se lanzó en febrero de
-                            2016 para Microsoft Windows, OS X, Linux, y PlayStation 4 y Xbox One.</p>
-                    </div>
-                    <div class="card-footer text-muted">
-                        <a href="#" class="btn btn-primary">Ver detalles</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 mb-4">
-                <div class="card">
-                    <img src="https://image.api.playstation.com/vulcan/ap/rnd/202008/2111/kZuu7RcHultdoVUuGsReuGcq.png"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Control 2</h5>
-                        <p class="card-text">Una presencia corrupta ha invadido la Agencia Federal de Control... Solo tú
-                            puedes detenerla, deberás luchar para recuperar Control.</p>
+                        <h5 th:text="${juego.nombre}" class="card-title"></h5>
+                        <p th:text="${juego.descripcion}" class="card-text"></p>
                     </div>
                     <div class="card-footer text-muted">
                         <a href="#" class="btn btn-primary">Ver detalles</a>
