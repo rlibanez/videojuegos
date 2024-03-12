@@ -15,6 +15,8 @@ public class Videojuego {
     private String descripcion;
     @Column(name="imagen_url") // Opcional. En el caso de usar nomenclatura camelCase, antes de las mayúsculas introduce una barra baja: imagenUrl = imagen_url
     private String imagenUrl;
+    @ManyToOne
+    private Distribuidor distribuidor;
 
     public String getNombre() {
         return nombre;
@@ -46,5 +48,13 @@ public class Videojuego {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Distribuidor getDistribuidor() {
+        return distribuidor;
+    }
+
+    public void setDistribuidor(Distribuidor distribuidor) {
+        this.distribuidor = distribuidor;
     }
 }
