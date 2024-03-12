@@ -3,7 +3,7 @@ package com.rlibanez.videojuegos.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="asdf")
+@Table(name="videojuego")
 public class Videojuego {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
