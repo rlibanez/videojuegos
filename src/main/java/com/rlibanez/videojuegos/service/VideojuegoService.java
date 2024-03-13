@@ -2,6 +2,7 @@ package com.rlibanez.videojuegos.service;
 
 import com.rlibanez.videojuegos.model.Videojuego;
 import com.rlibanez.videojuegos.repository.VideojuegoRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +17,15 @@ public class VideojuegoService {
     }
 
     public List<Videojuego> buscarDestacados() {
-        return videojuegoRepository.findAll();
+        return videojuegoRepository.buscarTodos3();
+    }
+
+    public List<Videojuego> buscarDestacadosOrdenadosNombre() {
+        Sort orden = Sort.by(Sort.Direction.ASC, "nombre");
+        return videojuegoRepository.findAll(orden);
+    }
+
+    public List<Videojuego> buscarDestacadosOrdenadosNombre2() {
+        return videojuegoRepository.findAllByOrderByNombreAsc();
     }
 }

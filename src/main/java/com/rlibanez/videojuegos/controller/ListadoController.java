@@ -5,6 +5,7 @@ import com.rlibanez.videojuegos.service.VideojuegoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import java.util.List;
 
 @Controller
@@ -19,6 +20,7 @@ public class ListadoController {
     @RequestMapping("/")
     public String listarVideojuegos(Model model) {
         List<Videojuego> destacados = videojuegoService.buscarDestacados();
+        //List<Videojuego> destacados = videojuegoService.buscarDestacadosOrdenadosNombre();
         model.addAttribute("videojuegos", destacados);
         return "listado";
     }
