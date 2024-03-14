@@ -5,6 +5,7 @@ import com.rlibanez.videojuegos.service.VideojuegoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -28,6 +29,14 @@ public class ListadoController {
     @RequestMapping("/videojuegosPorDistribuidor")
     public String listarVideojuegosPorDistribuidor(int distribuidorId, Model model) {
         List<Videojuego> juegos = videojuegoService.buscarPorDistribuidor(distribuidorId);
+        model.addAttribute("videojuegos", juegos);
+        return "listado";
+    }
+
+    // http://localhost:8080/buscar?q=Borderlands
+    @RequestMapping("/buscar")
+    public String buscar(@RequestParam("q") String consulta, Model model) {
+        List<Videojuego> juegos = videojuegoService.buscarPorNombre(consulta);
         model.addAttribute("videojuegos", juegos);
         return "listado";
     }

@@ -31,4 +31,12 @@ public interface VideojuegoRepository extends JpaRepository<Videojuego, Integer>
     @Query("from Videojuego v where v.distribuidor.id = ?1")
     List<Videojuego> buscarPorDistribuidor(int distribuidorId);
 
+    //// Buscar por nombre del videojuego
+    // Con @Query
+    @Query("from Videojuego v where v.nombre like %?1%")
+    List<Videojuego> buscarPorNombre(String consulta);
+
+    // Con query methods
+    List<Videojuego> findByNombreContaining(String consulta);
+
 }

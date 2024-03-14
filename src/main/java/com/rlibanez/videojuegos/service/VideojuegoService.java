@@ -32,4 +32,10 @@ public class VideojuegoService {
     public List<Videojuego> buscarPorDistribuidor(int distribuidorId) {
         return videojuegoRepository.buscarPorDistribuidor(distribuidorId);
     }
+
+    // Buscar por nombre del videojuego
+    public List<Videojuego> buscarPorNombre(String consulta) {
+        //return videojuegoRepository.buscarPorNombre(consulta);
+        return videojuegoRepository.findByNombreContaining(consulta);
+    }
 }

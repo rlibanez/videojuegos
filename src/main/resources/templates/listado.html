@@ -20,6 +20,11 @@
                  class="d-inline-block align-text-top">
             Tienda VJ
         </a>
+        <form th:action="@{/buscar}" class="d-flex" role="search">
+            <input name="q" autofocus="autofocus" class="form-control me-2" type="search" th:placeholder="${param.q}" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+
     </div>
 </nav>
 
@@ -31,7 +36,9 @@
                 <img th:src="${juego.imagenUrl}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 th:text="${juego.nombre}" class="card-title"></h5>
-                    <p><a th:href="@{videojuegosPorDistribuidor(distribuidorId=${juego.distribuidor.id})}" th:text="${juego.distribuidor.nombre}" class="badge rounded-pill bg-warning text-dark"></a></p>
+                    <p><a th:href="@{videojuegosPorDistribuidor(distribuidorId=${juego.distribuidor.id})}"
+                          th:text="${juego.distribuidor.nombre}" class="badge rounded-pill bg-warning text-dark"></a>
+                    </p>
                     <p th:text="${juego.descripcion}" class="card-text"></p>
                 </div>
                 <div class="card-footer text-muted">
