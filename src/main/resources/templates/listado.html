@@ -15,7 +15,7 @@
 <!-- As a link -->
 <nav class="navbar bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" th:href="@{/}">
             <img src="img/logo.png" alt="LogoVideoJuegos" width="30" height="30"
                  class="d-inline-block align-text-top">
             Tienda VJ
@@ -31,7 +31,7 @@
                 <img th:src="${juego.imagenUrl}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 th:text="${juego.nombre}" class="card-title"></h5>
-                    <p><span th:text="${juego.distribuidor.nombre}" class="badge rounded-pill bg-warning text-dark"></span></p>
+                    <p><a th:href="@{videojuegosPorDistribuidor(distribuidorId=${juego.distribuidor.id})}" th:text="${juego.distribuidor.nombre}" class="badge rounded-pill bg-warning text-dark"></a></p>
                     <p th:text="${juego.descripcion}" class="card-text"></p>
                 </div>
                 <div class="card-footer text-muted">

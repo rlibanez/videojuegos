@@ -28,4 +28,8 @@ public class VideojuegoService {
     public List<Videojuego> buscarDestacadosOrdenadosNombre2() {
         return videojuegoRepository.findAllByOrderByNombreAsc();
     }
+
+    public List<Videojuego> buscarPorDistribuidor(int distribuidorId) {
+        return videojuegoRepository.buscarPorDistribuidor(distribuidorId);
+    }
 }

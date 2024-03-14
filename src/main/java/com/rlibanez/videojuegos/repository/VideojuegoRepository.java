@@ -25,4 +25,10 @@ public interface VideojuegoRepository extends JpaRepository<Videojuego, Integer>
     // JPQL abreviado para ordenar resultados por el nombre del distribuidor
     @Query("from Videojuego v order by v.distribuidor.nombre")
     List<Videojuego> buscarTodos3();
+
+    // JPQL abreviado
+    // ?x hace referencia al parámetro número x del método
+    @Query("from Videojuego v where v.distribuidor.id = ?1")
+    List<Videojuego> buscarPorDistribuidor(int distribuidorId);
+
 }
