@@ -6,7 +6,8 @@ import jakarta.persistence.*;
 @Table(name="videojuego")
 public class Videojuego {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    // La generación automática de valores para la clave primaria queda delegada en la base de datos
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Integer id;
     @Column(name="nombre")
