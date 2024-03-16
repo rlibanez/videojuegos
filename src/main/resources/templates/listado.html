@@ -21,7 +21,8 @@
             Tienda VJ
         </a>
         <form th:action="@{/buscar}" class="d-flex" role="search">
-            <input name="q" autofocus="autofocus" class="form-control me-2" type="search" th:placeholder="${param.q}" aria-label="Search">
+            <input name="q" autofocus="autofocus" class="form-control me-2" type="search" th:placeholder="${param.q}"
+                   aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Buscar</button>
         </form>
 
@@ -29,6 +30,12 @@
 </nav>
 
 <div class="container mt-4 vj-destacados">
+    <div class="row">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4">
+            <a th:href="@{/videojuegos/crear}" class="btn btn-outline-success">Crear Videojuego</a>
+        </div>
+    </div>
+
     <div class="row">
 
         <div th:each="juego : ${videojuegos}" class="col-md-3 mb-4">

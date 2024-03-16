@@ -17,7 +17,7 @@ public class VideojuegoService {
     }
 
     public List<Videojuego> buscarDestacados() {
-        return videojuegoRepository.buscarTodos3();
+        return videojuegoRepository.buscarTodos();
     }
 
     public List<Videojuego> buscarDestacadosOrdenadosNombre() {
